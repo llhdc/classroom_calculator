@@ -62,9 +62,12 @@ end
 
 # Return the average for the entire class.
 def class_average(grade_hash)
-
+  averages(grade_hash)
+  .map { |k , v| v  }
+  .reduce(:+) / grade_hash.length
 end
 
 # Return an array of the top `number_of_students` students.
 def top_students(grade_hash, number_of_students)
+
 end
