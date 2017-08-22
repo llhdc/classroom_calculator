@@ -12,15 +12,15 @@ end
 # them as 1-10.
 def assignment_scores(grade_hash, assignment_num)
   # binding.pry
-  grade_hash.map do |k, v|
-    v[assignment_num - 1]
-  end
+  grade_hash.map { |k, v| v[assignment_num - 1] }
 end
 
 # Given a grade_hash and assignment number, return the average score for that
 # assignment. Note that Ruby counts arrays from 0, but we are referring to
 # them as 1-10.
 def assignment_average_score(grade_hash, assignment_num)
+  assignment_scores = grade_hash.map { |k, v| v[assignment_num - 1] }
+  assignment_scores.reduce(:+).to_i / assignment_scores.length
 end
 
 # Return a hash of students and their average score.
