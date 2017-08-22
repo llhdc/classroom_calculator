@@ -69,5 +69,7 @@ end
 
 # Return an array of the top `number_of_students` students.
 def top_students(grade_hash, number_of_students)
-
+  averages(grade_hash).sort_by { |k, v| v }.reverse
+  .map { |k, v| k }
+  .take(number_of_students)
 end
