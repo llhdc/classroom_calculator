@@ -1,3 +1,5 @@
+require "pry"
+
 # Given a grade_hash, student name, and assignment number, return the score
 # for that student and assignment. Note that Ruby counts arrays from 0, but
 # we are referring to them as 1-10.
@@ -9,6 +11,10 @@ end
 # assignment. Note that Ruby counts arrays from 0, but we are referring to
 # them as 1-10.
 def assignment_scores(grade_hash, assignment_num)
+  # binding.pry
+  grade_hash.map do |k, v|
+    v[assignment_num - 1]
+  end
 end
 
 # Given a grade_hash and assignment number, return the average score for that
